@@ -31,6 +31,8 @@
                 $numero_sostituzioni = 0;
 
                 // controllo che nella stringa ci sia la badword
+                //str_ireplace fa la stessa cosa ma ignora il case => non è case sensitive
+                //str_replace può sostituire anche più di una parola, ma allora bisogna passare un array: 1 da sostituire e 1 con le sostituzioni e accoppia il primo col primo, il secondo col secondo ecc...
                 $risultato = str_replace($parola_da_censurare, $censura, $testo, $numero_sostituzioni);
                 echo $risultato;
 
@@ -50,9 +52,9 @@
             </p>
             <p>
                 Ho sostituito la parola
-                    <?php
+                    '<?php
                     echo $parola_da_censurare;
-                    ?>
+                    ?>'
                     <?php
                     echo $numero_sostituzioni;
                     ?>
