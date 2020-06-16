@@ -27,8 +27,11 @@
                 //creo la variabile della censura
                 $censura = '***';
 
+                //è una variabile che non fa return, ma è usata come riferimento. La funzione modifica questa variabile inizializzata a 0.
+                $numero_sostituzioni = 0;
+
                 // controllo che nella stringa ci sia la badword
-                $risultato = str_replace($parola_da_censurare, $censura, $testo);
+                $risultato = str_replace($parola_da_censurare, $censura, $testo, $numero_sostituzioni);
                 echo $risultato;
 
                 ?>
@@ -44,6 +47,17 @@
                     ?>
                     caratteri.
                 </strong>
+            </p>
+            <p>
+                Ho sostituito la parola
+                    <?php
+                    echo $parola_da_censurare;
+                    ?>
+                    <?php
+                    echo $numero_sostituzioni;
+                    ?>
+                volte.
+
             </p>
         </div>
     </body>
